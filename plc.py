@@ -28,12 +28,23 @@ class PLC:
         self.output_image["MOTOR"] = plant.motor
 
     def take_input_image(self,input_image): 
-        
+        input_image.start_button = self.input_image["START"]
+        input_image.end_button = self.input_image["END"]
 
+    def take_output_image(self,output_image): 
+        output_image.motor = self.output_image["MOTOR"]
+        
+    def loop(self): 
+        while True: 
+             
+            
+        
 class InputImage: 
     def __init__(self):
+        self.start_button = False 
+        self.end_button = False
         
     
 class OutputImage: 
     def __init__(self):
-        
+        self.motor = False
